@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Görevlerim</title>
+</head>
+
+<body>
+
+    <div class="container p-5">
+
+        <h1 class="display-2 text-secondary" id="header">Görevlerim</h1>
+
+        <div class="card border-success mt-3">
+            <card class="card-header border-success">
+                <h5 class="text-success">Görev Ekle</h5>
+            </card>
+            <div class="card-body">
+                <form id="addTaskForm">
+                    <div class="input-group mt-3">
+                        <input id="txtTaskName" type="text" class="form-control border-success"
+                            placeholder="Yeni görev giriniz">
+                        <div class="input-group-append">
+                            <button id="btnAddNewTask" class="btn btn-success text-white" type="submit">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="taskAlert" class="alert alert-danger alert-dismissible fade show mt-2 visually-hidden" role="alert">
+            <strong>Görev boş bırakılamaz.</strong>
+            <button id="alertClose" type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+
+        <div class="card mt-3 mt-4 border-secondary">
+            <div class="card-header border-secondary">
+                <h5 class="float-start text-dark">Görevlerim</h5>
+                <a href="#" class="btn btn-outline-danger btn-sm delete-all float-end" data-bs-toggle="modal" data-bs-target="#confirmDelAllModal">
+                    Hepsini Sil
+                </a>
+            </div>
+            <ul id="task-list" class="list-group"></ul>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmDelAllModal" tabindex="-1" aria-labelledby="deleteAllLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteAllLabel">Tüm Görevleri Sil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Tüm görevlerin silinmesini onaylıyor musunuz?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal Et</button>
+                    <button id="btnDeleteAll" type="button" class="btn btn-primary">Onayla</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmDelModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModal">Seçilen Görevi Sil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Seçtiğiniz görevin silinmesini onaylıyor musunuz?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal Et</button>
+                    <button id="btnDelete" type="button" class="btn btn-primary">Onayla</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/cac1f35499.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
